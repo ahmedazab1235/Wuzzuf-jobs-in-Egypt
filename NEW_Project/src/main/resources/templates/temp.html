@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:xsi="https://www.thymeleafe.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Spring Boot</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://code.highcharts.com/css/highcharts.css" />
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+<div align="center">
+    <h2>Wuzzuf Project</h2>
+</div>
+<figure class="highcharts-figure">
+    <div id="container-bar"></div>
+    <h2> Top Company</h2>
+    <input type = "button" onclick = "JobCompanies()" value = "top companies">
+</figure>
+<script type="text/javascript">
+         function JobCompanies() {
+            $('#data').css('display', 'none');
+            $('#figure').css('display', 'none');
+            $('#loading').css('display', '');
+            $.ajax({
+                url : "/companies",
+                success : function(result) {
+                    $('#loading').css('display', 'none');
+                    $('#data').css('display', '');
+                    $('#figure').css('display', '');
+                    var data = [];
+                    var v;
+                    var count = 0;
+                    Object.keys(result).forEach(
+                            function(key) {
+                                if(count == 10)
+                                    return;
+                                v  = {name: key, y: result[key]}
+                                data.push(v)
+                                count++;
+                            });
+                    drawPieChart(data);
+                    var column_names = '';
+                    column_names += '<th scope="col">#</th>';
+                    column_names += '<th scope="col">Company Name</th>';
+                    column_names += '<th scope="col">Number Of Jobs</th>';
+
+                    $('#datatable-head').html(column_names);
+
+                    var rows = "";
+                    var counter = 1;
+                    Object.keys(result).forEach(
+                            function(key) {
+                                rows += '<tr>';
+                                rows += '<th scope="row">' + counter + '</th>';
+                                rows += '<td>' + key + '</td>';
+                                rows += '<td>' + result[key] + '</td>';
+                                rows += '</tr>';
+                                counter++;
+                            });
+
+                    $('#datatable-body').html(rows);
+                    $('#datatable').css('display', '');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
