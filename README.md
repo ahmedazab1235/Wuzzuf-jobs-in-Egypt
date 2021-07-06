@@ -19,5 +19,5 @@
 9. Show step 8 in bar chart 
 ![alt text](https://github.com/ahmedazab1235/Wuzzuf-jobs-in-Egypt/blob/main/img/area.png?raw=true)
 10. Print skills one by one and how many each repeated and order the output to find out the most important skills required?
-11. Factorize the YearsExp feature and convert it to numbers in new col. (Bounce )
-12. Apply K-means for job title and companies (Bounce )
+11. Factorize the YearsExp feature and convert it to numbers in new col. 
+12. K-means for job title and companies 
