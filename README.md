@@ -1,7 +1,7 @@
 # Wuzzuf jobs in Egypt
 
 - Ahmed Essam Azab :v:
-- Mohammad Elsayed Agoor 	:wave:
+- Mohammad Al-Sayed Agoor 	:wave:
 - Asmaa Ali Mahmoud :ok_hand:
 
 Wuzzuf jobs in Egypt data set at Kaggle
