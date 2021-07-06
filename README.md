@@ -1,8 +1,8 @@
 # Wuzzuf jobs in Egypt
 
-- Ahmed Essam Azab
-- Mohammad Elsayed Agoor
-- Asmaa Ali Mahmoud
+- Ahmed Essam Azab :v:
+- Mohammad Elsayed Agoor 	:wave:
+- Asmaa Ali Mahmoud :ok_hand:
 
 ## Our project have these features :smiley: :star_struck:
 
